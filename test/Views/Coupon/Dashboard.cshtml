@@ -214,7 +214,7 @@
                                     </div>
                                     <div class="col-sm">
                                         <div class="btn-activate-promo">
-                                            <input type="button" value="Reset" class="btn btn-primary"  id="activate_button" onclick="activate(@item)">
+                                            <input type="button" value="Activate bonus" class="btn btn-primary"  id="activate_button" onclick="activate()" name="@item.Promocodeid">
 
                                         </div>
 
@@ -301,13 +301,16 @@
           window.location.href = '@Url.Action("Dashboard", "Coupon")';
         }
 
-        function activate(item) {
+        $('#activate_button').click(function () {
 
             $('#procodeInput').attr('type', 'text');
             $('#activate_button').prop("disabled", true);
 
-
-        }
+            $(this).addClass('disable-link');
+            $(this).removeClass('enable-link');
+            $(this).removeAttr('onclick');
+            $('#activate_button').remove()
+        });
 
 
 

@@ -4,5 +4,50 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>To start Evaluation please click the login button <a href="https://cupons.azurewebsites.net/Account/Login">Go to  Login page</a>.</p>
+    <h1 class="display-4">
+        <p>Username: avik111191 password:N@zi111191</p>
+        <p>Username: rocky password:balboa</p>
+    </h1>
+        <p> there are 3 entities [users],[promocode] and [userPromocodes]</p>
+
+        <p>
+            CREATE TABLE [dbo].[users] (
+            [userid]  UNIQUEIDENTIFIER NOT NULL,
+            [fname]   VARCHAR (10)     NOT NULL,
+            [lname]   VARCHAR (10)     NOT NULL,
+            [uname]   VARCHAR (10)     NOT NULL,
+            [passwd]  VARCHAR (10)     NOT NULL,
+            [balance] FLOAT (53)       NULL,
+            [payout]  FLOAT (53)       NULL,
+            PRIMARY KEY CLUSTERED ([userid] ASC),
+            UNIQUE NONCLUSTERED ([uname] ASC)
+            );
+
+        </p>
+
+        <p>
+            CREATE TABLE [dbo].[promocode] (
+            [promocodeid]  UNIQUEIDENTIFIER NOT NULL,
+            [website]      NVARCHAR (50)    NOT NULL,
+            [promocode ]   NCHAR (10)       NOT NULL,
+            [description ] NCHAR (10)       NULL,
+            [title ]       NVARCHAR (50)    NOT NULL,
+            [Image]        NVARCHAR (50)    NULL,
+            [amount]       FLOAT (53)       NOT NULL,
+            [maxCount ]    INT              NOT NULL,
+            PRIMARY KEY CLUSTERED ([promocodeid] ASC)
+            );
+
+        </p>
+        <p>
+            CREATE TABLE [dbo].[userPromocodes] (
+            [Id]          UNIQUEIDENTIFIER NOT NULL,
+            [userid]      UNIQUEIDENTIFIER NOT NULL,
+            [promocodeid] UNIQUEIDENTIFIER NOT NULL,
+            [value]       FLOAT (53)       NOT NULL,
+            PRIMARY KEY CLUSTERED ([Id] ASC)
+            );
+        </p>
+
 </div>
