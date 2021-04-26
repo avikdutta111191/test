@@ -9,45 +9,266 @@
         <p>Username: avik111191 password:N@zi111191</p>
         <p>Username: rocky password:balboa</p>
     </h1>
-        <p> there are 3 entities [users],[promocode] and [userPromocodes]</p>
+    <p> there are 3 entities [users],[promocode] and [userPromocodes]</p>
 
-        <p>
-            CREATE TABLE [dbo].[users] (
-            [userid]  UNIQUEIDENTIFIER NOT NULL,
-            [fname]   VARCHAR (10)     NOT NULL,
-            [lname]   VARCHAR (10)     NOT NULL,
-            [uname]   VARCHAR (10)     NOT NULL,
-            [passwd]  VARCHAR (10)     NOT NULL,
-            [balance] FLOAT (53)       NULL,
-            [payout]  FLOAT (53)       NULL,
-            PRIMARY KEY CLUSTERED ([userid] ASC),
-            UNIQUE NONCLUSTERED ([uname] ASC)
-            );
+    <p>
+        CREATE TABLE [dbo].[users] (
+        [userid]  UNIQUEIDENTIFIER NOT NULL,
+        [fname]   VARCHAR (10)     NOT NULL,
+        [lname]   VARCHAR (10)     NOT NULL,
+        [uname]   VARCHAR (10)     NOT NULL,
+        [passwd]  VARCHAR (10)     NOT NULL,
+        [balance] FLOAT (53)       NULL,
+        [payout]  FLOAT (53)       NULL,
+        PRIMARY KEY CLUSTERED ([userid] ASC),
+        UNIQUE NONCLUSTERED ([uname] ASC)
+        );
 
-        </p>
+    </p>
 
-        <p>
-            CREATE TABLE [dbo].[promocode] (
-            [promocodeid]  UNIQUEIDENTIFIER NOT NULL,
-            [website]      NVARCHAR (50)    NOT NULL,
-            [promocode ]   NCHAR (10)       NOT NULL,
-            [description ] NCHAR (10)       NULL,
-            [title ]       NVARCHAR (50)    NOT NULL,
-            [Image]        NVARCHAR (50)    NULL,
-            [amount]       FLOAT (53)       NOT NULL,
-            [maxCount ]    INT              NOT NULL,
-            PRIMARY KEY CLUSTERED ([promocodeid] ASC)
-            );
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
 
-        </p>
-        <p>
-            CREATE TABLE [dbo].[userPromocodes] (
-            [Id]          UNIQUEIDENTIFIER NOT NULL,
-            [userid]      UNIQUEIDENTIFIER NOT NULL,
-            [promocodeid] UNIQUEIDENTIFIER NOT NULL,
-            [value]       FLOAT (53)       NOT NULL,
-            PRIMARY KEY CLUSTERED ([Id] ASC)
-            );
-        </p>
+            .tg td {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+            }
+
+            .tg th {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+            }
+
+            .tg .tg-0lax {
+                text-align: left;
+                vertical-align: top
+            }
+    </style>
+    <table class="tg">
+        <thead>
+        <th class="tg-0lax">[userid]</th>
+        <th class="tg-0lax">[fname]</th>
+        <th class="tg-0lax">[lname]  </th>
+        <th class="tg-0lax">[uname]    </th>
+        <th class="tg-0lax">[passwd]</th>
+        <th class="tg-0lax">[balance]</th>
+        <th class="tg-0lax">[payout]</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-0lax">d99d2c6f-233e-4368-9134-0f6786686654</td>
+                <td class="tg-0lax">'rocky'</td>
+                <td class="tg-0lax">'balboa'</td>
+                <td class="tg-0lax">'rock'</td>
+                <td class="tg-0lax">''balboa'</td>
+                <td class="tg-0lax">NULL</td>
+                <td class="tg-0lax">NULL</td>
+            </tr>
+            <tr>
+                <td class="tg-0lax">d99d2c6f-233e-4368-9134-0f6786686554</td>
+                <td class="tg-0lax">avik</td>
+                <td class="tg-0lax">dutta</td>
+                <td class="tg-0lax">avik111191</td>
+                <td class="tg-0lax">N@zi111191</td>
+                <td class="tg-0lax">2500</td>
+                <td class="tg-0lax">100</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        CREATE TABLE [dbo].[promocode] (
+        [promocodeid]  UNIQUEIDENTIFIER NOT NULL,
+        [website]      NVARCHAR (50)    NOT NULL,
+        [promocode ]   NCHAR (10)       NOT NULL,
+        [description ] NCHAR (10)       NULL,
+        [title ]       NVARCHAR (50)    NOT NULL,
+        [Image]        NVARCHAR (50)    NULL,
+        [amount]       FLOAT (53)       NOT NULL,
+        [maxCount ]    INT              NOT NULL,
+        PRIMARY KEY CLUSTERED ([promocodeid] ASC)
+        );
+
+    </p>
+
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+            .tg td {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+            }
+
+            .tg th {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+            }
+
+            .tg .tg-0lax {
+                text-align: left;
+                vertical-align: top
+            }
+    </style>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th class="tg-0lax">[promocodeid]</th>
+                <th class="tg-0lax">[website]</th>
+                <th class="tg-0lax">[promocode ]  </th>
+                <th class="tg-0lax">[description ]     </th>
+                <th class="tg-0lax">[title ]</th>
+                <th class="tg-0lax">[Image]</th>
+                <th class="tg-0lax">[amount]</th>
+                <th class="tg-0lax">[maxCount ]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-0lax">038cea14-e648-476f-aeda-339b2333da2e</td>
+                <td class="tg-0lax">www.amazon.com/video</td>
+                <td class="tg-0lax">AvikEbay  </td>
+                <td class="tg-0lax">Video     </td>
+                <td class="tg-0lax">Amazon Video</td>
+                <td class="tg-0lax">/assets/images/Glyph.png</td>
+                <td class="tg-0lax">100</td>
+                <td class="tg-0lax">5</td>
+            </tr>
+            <tr>
+                <td class="tg-0lax">a4cddba7-1b49-401d-9075-4cd18d06dc33</td>
+                <td class="tg-0lax">www.amazon.com/music</td>
+                <td class="tg-0lax">AvikEbay  </td>
+                <td class="tg-0lax">Music     </td>
+                <td class="tg-0lax">Amazon Prime</td>
+                <td class="tg-0lax">/assets/images/Glyph.png</td>
+                <td class="tg-0lax">100</td>
+                <td class="tg-0lax">5</td>
+            </tr>
+            <tr>
+                <td class="tg-0lax">bf0f890f-fe40-410c-9b09-7a7ce52afc5b</td>
+                <td class="tg-0lax">www.ebay.com</td>
+                <td class="tg-0lax">AvikEbay  </td>
+                <td class="tg-0lax">Ebay      </td>
+                <td class="tg-0lax">Ebay</td>
+                <td class="tg-0lax">/assets/images/Glyph.png</td>
+                <td class="tg-0lax">100</td>
+                <td class="tg-0lax">5</td>
+            </tr>
+            <tr>
+                <td class="tg-0lax">8af70de8-ffec-4c68-ab25-a5eb38e2a88c</td>
+                <td class="tg-0lax">www.amazon.com</td>
+                <td class="tg-0lax">AvikAm    </td>
+                <td class="tg-0lax">amazon    </td>
+                <td class="tg-0lax">Amazon</td>
+                <td class="tg-0lax">/assets/images/Glyph.png</td>
+                <td class="tg-0lax">100</td>
+                <td class="tg-0lax">5</td>
+            </tr>
+            <tr>
+                <td class="tg-0lax">e07510e8-10bd-4ac0-88ae-aa12c3d6ce73</td>
+                <td class="tg-0lax">www.google.com</td>
+                <td class="tg-0lax">abcd479   </td>
+                <td class="tg-0lax">Google o  </td>
+                <td class="tg-0lax">Google Store</td>
+                <td class="tg-0lax">/assets/images/Glyph.png</td>
+                <td class="tg-0lax">100</td>
+                <td class="tg-0lax">5</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <p>
+        CREATE TABLE [dbo].[userPromocodes] (
+        [Id]          UNIQUEIDENTIFIER NOT NULL,
+        [userid]      UNIQUEIDENTIFIER NOT NULL,
+        [promocodeid] UNIQUEIDENTIFIER NOT NULL,
+        [value]       FLOAT (53)       NOT NULL,
+        PRIMARY KEY CLUSTERED ([Id] ASC)
+        );
+    </p>
+
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+            .tg td {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+            }
+
+            .tg th {
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+            }
+
+            .tg .tg-0lax {
+                text-align: left;
+                vertical-align: top
+            }
+    </style>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th class="tg-0lax"> [Id]</th>
+                <th class="tg-0lax">[userid]</th>
+                <th class="tg-0lax">[promocodeid]</th>
+                <th class="tg-0lax">[value]  </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-0lax">a4cddba7-1b49-401d-9075-4cd18d06dc44</td>
+                <td class="tg-0lax">d99d2c6f-233e-4368-9134-0f6786686654</td>
+                <td class="tg-0lax">a4cddba7-1b49-401d-9075-4cd18d06dc33</td>
+                <td class="tg-0lax">100</td>
+            </tr>
+        </tbody>
+    </table>
 
 </div>
