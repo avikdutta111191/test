@@ -1,0 +1,302 @@
+﻿@{
+    Layout = null;
+}
+
+@section devCss{
+    <link rel="stylesheet" href="~/css/homePage.css" asp-append-version="true" />
+}
+
+@section devJs{
+    <link rel="application/javascript" href="~/js/homePage.js" asp-append-version="true" />
+}
+
+@model IEnumerable<test.Models.Promocode>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cupon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <script src="https://kit.fontawesome.com/e8feda7bbf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/homePage.css">
+    <script src="~/js/homePage.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>
+
+    <!--===============================================================================================-->
+</head>
+<body>
+
+
+
+
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="">
+            <div class="sidebar-header">
+                <img src="/assets/images/Glyph.png" class="img_logo" alt="Sample Photo" />
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <div class="sidebarListItem">
+                        <div class="li-icon-circle">
+                            <i class="far fa-circle"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebarListItem">
+                        <div class="li-icon-circle">
+                            <i class="far fa-circle"></i>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="sidebarListItem">
+                        <div class="li-icon-circle">
+                            <i class="far fa-circle"></i>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="sidebarListItem">
+                        <div class="li-icon-circle">
+                            <i class="far fa-circle"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebarListItem">
+                        <div class="li-icon-circle">
+                            <i class="far fa-circle"></i>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="sidebarListItem">
+                        <div class="li-icon-circle">
+                            <i class="far fa-circle"></i>
+                        </div>
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="service">
+                Services
+            </div>
+
+            <div class="serachControll">
+                <div class="row">
+
+                    <div class="col-sm">
+                        <div class="promo-code">
+                            <div class="promo-code-form-headder">
+                                Filter
+                            </div>
+
+                            <div class="input-group mb-3">
+
+                                <input type="text" class="form-control" placeholder="" aria-label="Search" aria-describedby="basic-addon2" value="" id="searchInput">
+
+                            </div>
+                        </div>
+                        </div>
+                    <div class="col-sm">
+
+                        <div class="btn-reset-promo">
+
+                            <input type="button" value="Reset" class="btn btn-primary" onclick="ResetSearch()">
+
+
+                        </div>
+
+                    </div>
+
+                        </div>
+
+
+                </div>
+
+                <div class="card-rows">
+                    @foreach (var item in Model)
+                    {
+
+
+                        <div class="card">
+                            <div class="card-body">
+
+
+                                <div class="row">
+                                    <div class="col-sm">
+
+                                        <div class="promoTitle">
+                                            @item.Title
+                                        </div>
+
+                                        <div class="promoDescription">
+                                            @item.Description
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm">
+
+                                        <div class="promo-code">
+                                            <div class="promo-code-form-headder">
+                                                Promocode
+                                            </div>
+
+                                            <div class="input-group mb-3">
+
+                                                <input type="password" class="form-control" placeholder="promomocode" aria-label="promocode" aria-describedby="basic-addon2" value=@item.Promocode1 id="procodeInput">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary" type="button"><i class="far fa-clone" style="color:#0085FF;"></i></button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col-sm">
+                                        <div class="btn-activate-promo">
+                                            <a href="#" class="btn btn-primary" id="activate_button">Activate bonus</a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+
+
+
+            </div>
+    </div>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <script src="https://kit.fontawesome.com/e8feda7bbf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/homePage.css">
+    <script src="~/js/homePage.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>
+
+    <script>
+
+
+        $(function () {
+            $('#example1').DataTable();
+        });
+
+        const node = document.getElementById("searchInput");
+        node.addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                Search();
+            }
+        });
+
+        function ResetSearch() {
+          window.location.href = '@Url.Action("Dashboard", "Coupon")';
+        }
+
+        $('#activate_button').click(function () {
+
+            $('#procodeInput').attr('type', 'text');
+            $('#activate_button').prop("disabled", true);
+
+            $(this).addClass('disable-link');
+            $(this).removeClass('enable-link');
+            $(this).removeAttr('onclick');
+            $('#activate_button').remove()
+        });
+
+
+
+        function Search() {
+                $.ajax(
+    {
+      type: "POST",
+       url: '@Url.Action("GetPromocode", "Coupon")' + "/?sercahkey=" + $("#searchInput").val(),
+      data: {
+          sercahkey: $('#searchInput').val(),
+      },
+      error: function (result) {
+        alert("There is a Problem, Try Again!");
+      },
+      success: function (result) {
+        console.log(result);
+        if (result != null) {
+          window.location.href = '@Url.Action("GetPromocode", "Coupon")' + "/?sercahkey=" + $("#searchInput").val();
+        }
+        else {
+          alert(result.message);
+        }
+      }
+    });
+        }
+    </script>
+
+
+</body>
+</html>

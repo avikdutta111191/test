@@ -1,0 +1,199 @@
+﻿
+
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+#content {
+    width: 100%;
+}
+
+.card {
+    /* GrayPure / #White */
+    background: #FFFFFF;
+    /* GrayBlue / #E2E5EC */
+    border: 1px solid #E2E5EC;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.promo-code-form-headder {
+    /* Promocode */
+
+    width: 69px;
+    height: 17px;
+    padding-top: 24px;
+    padding-bottom: 7px;
+    /* Special / Label & Tag, Regular, 11pt */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 16px;
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    color: #7D7D7D;
+    border-radius: 3px;
+}
+
+.input-group.mb-3 {
+    padding-top: 4px;
+    height: 24px;
+}
+
+.btn-primary {
+    color: #fff;
+    width: 300px;
+    background: #0085FF;
+    border-radius: 4px;
+}
+
+.btn-activate-promo {
+    padding-top: 34px;
+    height: 24px;
+}
+
+.promoDescription {
+    /* Description */
+    height: 22px;
+    padding-left: 32px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    color: #7D7D7D;
+}
+
+
+.promoTitle {
+    height: 43px;
+    padding-left: 32px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 29px;
+    line-height: 42px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.service {
+    padding: 32px;
+    /* Headline / 1, Light, 39pt */
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 39px;
+    line-height: 46px;
+    /* identical to box height */
+
+    color: #262626;
+}
+
+.card-rows {
+    padding: 32px;
+}
+
+.img_logo {
+    padding: 24%;
+}
+
+.li-icon-circle {
+    padding: 33%;
+}
+
+.sidebarListItem {
+    width: 80px;
+    height: 72px;
+}
+
+#sidebar {
+    min-width: 80px;
+    max-width: 80px;
+    min-height: 100vh;
+    background: #1B1D29;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+    #sidebar.active {
+        min-width: 80px;
+        max-width: 80px;
+    }
+
+
+
+    #sidebar .sidebar-header {
+        width: 80px;
+        height: 72px;
+        background: #1B1D29;
+    }
+
+    #sidebar ul.components {
+        padding: 20px 0;
+        border-bottom: 1px solid #47748b;
+    }
+
+    #sidebar ul p {
+        color: #fff;
+        padding: 10px;
+    }
+
+    #sidebar ul li a {
+        width: 80px;
+        height: 72px;
+        padding: 10px;
+        font-size: 1.1em;
+        display: block;
+    }
+
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: #fff;
+        }
+
+    #sidebar ul li.active > a, a[aria-expanded="true"] {
+        color: #fff;
+        background: #6d7fcc;
+    }
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+
+
+input#searchInput {
+    height: 48px;
+}
+
+a#reset_button {
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.btn-reset-promo {
+    padding-top: 34px;
+    height: 48px;
+}
+
+#serachControll {
+    padding: 32px;
+    margin-left: 15px;
+}
+
+.serachControll {
+    padding: 32px;
+    margin-left: 15px;
+}
