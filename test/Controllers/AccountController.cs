@@ -43,7 +43,7 @@ namespace test.Controllers
                     if (_user.Where(s => s.Passwd == user.Passwd).Any())
                     {
 
-                        return Json(new { status = true, message = "Login Successfull!" });
+                        return Json(new { status = true, message = "Login Successfull!", Uname = user.Uname.ToString()});
                     }
                     else
                     {

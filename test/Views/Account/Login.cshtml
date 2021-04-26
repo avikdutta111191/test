@@ -121,7 +121,13 @@
       },
       success: function (result) {
         console.log(result);
-        if (result.status == true) {
+          if (result.status == true) {
+
+              // Check browser support
+              if (typeof (Storage) !== "undefined") {
+                  // Store
+                  localStorage.setItem("Uname", result.uname);
+              }   
           window.location.href = '@Url.Action("Dashboard", "Coupon")';
         }
         else {

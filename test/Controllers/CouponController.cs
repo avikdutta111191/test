@@ -31,31 +31,34 @@ namespace test.Controllers
             return View(matchingProducts);
         }
 
-        public ActionResult User(Users user)
+        public ActionResult GetUserPayout(string username)
         {
-            if (user == null)
+            if (username  == null)
             {
                 return View();
             }
             else
             {
 
-                var _user = db.Users.Where(s => s.Uname == user.Uname);
+                var _user = db.Users.Where(s => s.Uname == username).Select(s=>s.Userid).ToArray();
                 if (_user.Any())
                 {
-                    if (_user.Where(s => s.Passwd == user.Passwd).Any())
+                    var totalBalance = db.Promocode.Select(s => s.Amount*s.MaxCount).ToArray();
+
+                    var values =db.UserPromocodes.Where(s => s.Userid == _user[0]).Select(s=>s.Value).ToArray();
+                    if (values!=null|| totalBalance!=null)
                     {
 
-                        return Json(new { status = true, message = "Login Successfull!" });
+                        return Json(new { status = true, Payout = values.Sum(), Balance = totalBalance.Sum()}); 
                     }
                     else
                     {
-                        return Json(new { status = false, message = "Invalid Password!" });
+                        return Json(new { status = false, Payout = 0, Balance = 0 });
                     }
                 }
                 else
                 {
-                    return Json(new { status = false, message = "Invalid Email!" });
+                    return Json(new { status = false, Payout = 0, Balance = 0 });
                 }
             }
         }
